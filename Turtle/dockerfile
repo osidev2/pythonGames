@@ -1,0 +1,16 @@
+FROM python:3
+WORKDIR /work
+# ADD requirements.txt .
+#ADD main.py .
+
+#Optional
+#ENV https_proxy=http://[proxy]:[port]
+#ENV http_proxy=http://[proxy]:[port]
+
+# update
+RUN apt-get update \ 
+&& apt-get install --reinstall build-essential -y
+RUN apt-get install python3-tk -y
+
+#Pip command without proxy setting
+#RUN pip install -r requirements.txt
